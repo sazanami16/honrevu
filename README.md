@@ -1,24 +1,57 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :reviews
+- has_many :comments
 
-* Configuration
+## reviews テーブル
 
-* Database creation
+| Column  | Type        | Options          |
+| ------- | ---------- | ----------------  |
+| title   | string     | null: false       |
+| text    | string     | null: false       |
+| user    | references | foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many   :comments
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments テーブル
 
-* Deployment instructions
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| text     | string     | null: false       |
+| user     | references | foreign_key :true |
+| review   | references | foreign_key :true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :review
+
+## ○ 機能要件
+## ・ログイン、ログアウト
+## ・ユーザー登録
+## ・ユーザー編集
+## ・ユーザー削除
+## ・要約投稿（画像も含む）：制限文字800字以内
+## ・投稿編集（画像も含む）
+## ・投稿削除（画像も含む）：制限枚数 1枚
+## ・コメント機能
+## ・コメント編集
+## ・コメント削除
+## ・はなまるボタン（いいねボタン）
+
+## ※ フロントにReact使用(APIでつなげる）
+## ※ ログイン、ログアウトはdevice使用
+## ※ 画像はActiveStorageを使用
