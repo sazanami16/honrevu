@@ -1,0 +1,6 @@
+<div class= "contents row">
+  <p><%= @name %>さんの投稿一覧</p>
+  <% @reviews.each do |review| %>
+    <%= render partial: "reviews/review", locals: { review: review } %>
+  <% end %>
+</div>

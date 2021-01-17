@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [:show, :edit]
+
   def index
     @reviews = Review.all
   end
@@ -16,8 +18,23 @@ class ReviewsController < ApplicationController
     end
   end
 
-  private
+  def show
+  end
 
+  def edit
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+    redirect_to root_path
+  end
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  private
   def review_params
     params.require(:review).permit(:title, :text).merge(user_id: current_user.id)
   end
