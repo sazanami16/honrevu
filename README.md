@@ -39,6 +39,13 @@
 - belongs_to :user
 - belongs_to :review
 
+## book_marks テーブル
+
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| user     | references | foreign_key :true |
+| review   | references | foreign_key :true |
+
 ## ○ 機能要件
 ## ・ログイン、ログアウト
 ## ・ユーザー登録
