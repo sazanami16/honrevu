@@ -1,5 +1,5 @@
 <div class="contents row">
   <% @reviews.each do |review| %>
-    <%= render partial: "review", locals: { review: review } %>
+    <%= render 'review', review: review %>
   <% end %>
 </div>

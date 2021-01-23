@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :comments
+  has_many :books
 
   validates :name, presence: true
+
+  def liked_by?(review_id)
+    books.where(review_id: review_id).exists?
+  end
 end

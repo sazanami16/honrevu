@@ -39,6 +39,18 @@
 - belongs_to :user
 - belongs_to :review
 
+## books テーブル
+
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| user     | references | foreign_key :true |
+| review   | references | foreign_key :true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :review
+
 ## ○ 機能要件
 ## ・ログイン、ログアウト
 ## ・ユーザー登録
@@ -50,7 +62,7 @@
 ## ・コメント機能
 ## ・コメント編集
 ## ・コメント削除
-## ・はなまるボタン（いいねボタン）
+## ・いいねボタン
 
 ## ※ フロントにReact使用(APIでつなげる）
 ## ※ ログイン、ログアウトはdevice使用
