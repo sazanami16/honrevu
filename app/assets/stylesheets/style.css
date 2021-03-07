@@ -208,11 +208,20 @@ div.contents.row div.content_post {
   border: 1.5px solid #58575a38;
 }
 
+.content_footer{
+  display: flex;
+}
+
+.book_mark{
+  height: 33px;
+  width: 145px;
+  padding: 5px;
+}
+
 .more {
   height: 33px;
   width: 145px;
   padding: 5px;
-  margin: 0 0 0 auto;
 }
 .more_list {
   display: flex;
