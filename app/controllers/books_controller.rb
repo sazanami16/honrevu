@@ -3,7 +3,6 @@ class BooksController < ApplicationController
 
   def create
     Book.create(user_id: current_user.id, review_id: params[:id])
-    @review = Review.all
   end
 
   def destroy
