@@ -216,14 +216,12 @@ div.contents.row div.content_post {
   height: 33px;
   width: 145px;
   padding: 5px;
-  margin: 0 auto 0 0;
 }
 
 .more {
   height: 33px;
   width: 145px;
   padding: 5px;
-  margin: 0 0 0 auto;
 }
 .more_list {
   display: flex;

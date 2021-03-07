@@ -1,26 +1,28 @@
-<div class="content_post">
-  <div class="content_title">
-    <%= review.title %>
-  </div>
-  <div class="content_text">
-    <%= review.text %>
-  </div>
-  <div class="content_footer">
-    <div class="book_mark">
-      <% if current_user.liked_by?(review.id) %>
-      <div id="review_<%= review.id %>">
-        <div>
-          <%= link_to 'いいねを外す', destroy_book_path(review), method: :DELETE, remote: true %> <%= review.books.count %>
-        </div>
-      <% else %>
-        <div>
-          <%= link_to 'いいね', create_book_path(review), method: :POST, remote: true %> <%= review.books.count %>
-       </div>
-      <% end %>
-      </div>
+<div class="contents row">
+  <div class="content_post">
+    <div class="content_title">
+      <%= review.title %>
     </div>
-    <div class="more">
-      <%= link_to 'Show Review', review_path(review.id), method: :get %>
+    <div class="content_text">
+      <%= review.text %>
+    </div>
+    <div class="content_footer">
+      <div class="book_mark">
+        <% if current_user.liked_by?(review.id) %>
+        <div id="review" <%= review.id %>>
+            <div>
+              <%= link_to 'いいねを外す', destroy_book_path(review), method: :DELETE, remote: true %> <%= review.books.count %>
+            </div>
+        <% else %>
+          <div>
+            <%= link_to 'いいね', create_book_path(review), method: :POST, remote: true %> <%= review.books.count %>
+          </div>
+         </div>
+        <% end %>
+      </div>
+      <div class="more">
+        <%= link_to 'Show Review', review_path(review.id), method: :get %>
+      </div>
     </div>
   </div>
 </div>
