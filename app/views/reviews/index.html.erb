@@ -1,5 +1,7 @@
 <div class="contents row">
   <% @reviews.each do |review| %>
-    <%= render 'review', review: review %>
+    <div id="review_<%= review.id %>">
+      <%= render 'review', review: review %>
+    </div>
   <% end %>
 </div>

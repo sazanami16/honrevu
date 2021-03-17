@@ -1,10 +1,35 @@
 <div class="contents row">
-   <div class="content_post">
-    <div class="content_title">
-      <%= @review.title %>
+  <div class="content_post">
+    <div class="content_image">
+       <%= image_tag(@review.image, class: "item-img") %>
     </div>
+    <div class="content_header">
+     <span>評価：</span>
+       <div id="star-rate<%= @review.id%>"></div>    
+          <script>
+            $('#star-rate<%= @review.id%>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half      : true,
+              readOnly: true,
+              score: <%= @review.rating %>,
+            });
+            $('#star-rate<%= @review.id%>').css('padding', '10px');
+          </script>
+        <span>ジャンル：</span>
+        <div class="content_genre">
+          <%= @review.genre.name %>
+        </div>
+        <span>タイトル：</span>
+        <div class="content_title">
+          <%= @review.title %>
+        </div>
+    </div>
+    <span>レビュー：</span>
     <div class="content_text">
-      <%= @review.text %>
+       <%= @review.text %>
     </div>
     <div class="more">
       <div class="more_list">

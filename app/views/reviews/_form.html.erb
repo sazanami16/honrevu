@@ -1,6 +1,22 @@
-<%= form_with(model: @review, local: true) do |form| %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_field :title, placeholder: "Title" %>
-      <%= form.text_area :text, placeholder: "Text" %>
-      <%= form.submit "Review!!" %>
+<%= form_with(model: @review, local: true) do |f| %>
+      <%= f.file_field :image, placeholder: "Image Url" %>
+      <%= f.text_field :title, placeholder: "Title" %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+      <%= f.text_area :text, placeholder: "Text" %>
+      
+      <div class="field" id="star">
+        <%= f.label :rating,  "星評価 (※必須)" ,id: "e"%> 
+        <%= f.hidden_field :rating, id: :review_star %>
+      </div>
+       <script>
+       $('#star').raty({
+         size     : 36,
+         starOff:  '<%= asset_path('star-off.png') %>',
+         starOn :  '<%= asset_path('star-on.png') %>',
+         starHalf: '<%= asset_path('star-half.png') %>',
+         scoreName: 'review[rating]',
+         half: true,
+       });
+      </script>  
+      <%= f.submit "Review!!" %>
  <% end %>

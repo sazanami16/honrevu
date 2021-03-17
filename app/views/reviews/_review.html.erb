@@ -1,28 +1,53 @@
 <div class="contents row">
   <div class="content_post">
-    <div class="content_title">
-      <%= review.title %>
+    <div class="content_image">
+       <%= image_tag(review.image, class: "item-img") %>
     </div>
+    <div class="content_header">
+     <span>評価：</span>
+       <div id="star-rate<%= review.id%>"></div>    
+          <script>
+            $('#star-rate<%= review.id%>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              starHalf  : '<%= asset_path('star-half.png') %>',
+              half      : true,
+              readOnly: true,
+              score: <%= review.rating %>,
+            });
+            $('#star-rate<%= review.id%>').css('padding', '10px');
+          </script>
+        <span>ジャンル：</span>
+        <div class="content_genre">
+          <%= review.genre.name %>
+        </div>
+        <span>タイトル：</span>
+        <div class="content_title">
+          <%= review.title %>
+        </div>
+    </div>
+    <span>レビュー：</span>
     <div class="content_text">
-      <%= review.text %>
+       <%= review.text %>
     </div>
     <div class="content_footer">
       <div class="book_mark">
-        <% if current_user.liked_by?(review.id) %>
-        <div id="review" <%= review.id %>>
-            <div>
-              <%= link_to 'いいねを外す', destroy_book_path(review), method: :DELETE, remote: true %> <%= review.books.count %>
-            </div>
-        <% else %>
-          <div>
-            <%= link_to 'いいね', create_book_path(review), method: :POST, remote: true %> <%= review.books.count %>
-          </div>
-         </div>
-        <% end %>
-      </div>
-      <div class="more">
-        <%= link_to 'Show Review', review_path(review.id), method: :get %>
-      </div>
+            <% if current_user.liked_by?(review.id) %>
+              <%= link_to destroy_book_path(review), class: "like-link", method: :DELETE, remote: true do %> 
+                <i class="fa fa-heart unlike-btn"></i>
+              <% end %>
+              <%= review.books.count %>
+            <% else %>
+              <%= link_to create_book_path(review), class: "like-link", method: :POST, remote: true do %>
+                <i class="fa fa-heart like-btn"></i>
+              <% end %>
+              <%= review.books.count %>
+            <% end %>
+       </div>
+       <div class="more">
+         <%= link_to 'Show Review', review_path(review.id), method: :get %>
+       </div>
     </div>
   </div>
 </div>

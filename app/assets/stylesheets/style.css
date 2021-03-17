@@ -187,6 +187,11 @@ header.header .user_nav ul li a {
   right: 0;
 }
 
+.item-img {
+  width: 33vh;
+  height: 40vh;
+}
+
 div.contents.row h2 {
   margin: 20px 0;
   padding: 0;
@@ -203,11 +208,14 @@ div.contents.row div.content_post {
 div.contents.row div.content_post {
   margin-bottom: 30px;
   padding: 10px;
-  height: 420px;
+  height: 100%;
   font-size: 15px;
   border: 1.5px solid #58575a38;
 }
 
+.content_image {
+  padding: 10px;
+}
 .content_footer{
   display: flex;
 }
@@ -216,6 +224,25 @@ div.contents.row div.content_post {
   height: 33px;
   width: 145px;
   padding: 5px;
+  margin-right: 350px;
+}
+
+.like-link {
+  text-decoration: none;
+}
+
+.like-link:hover {
+  background-color: #fff;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #e54747;
 }
 
 .more {
@@ -231,17 +258,19 @@ div.contents.row div.content_post {
   padding-right: 15px;
 }
 
-div.content_title {
-  margin-bottom: 15px;
+.content_title,
+.content_genre {
+  margin: 10px 0 20px 10px;
   padding: 10px;
   height: 50px;
+  width: 627px;
   font-size: 20px;
   border: black;
   border: 1.5px solid #58575a38;
 }
 
 div.content_text {
-  margin-bottom: 5px;
+  margin: 10px 0 20px 10px;
   padding: 10px;
   height: 300px;
   font-size: 15px;
@@ -256,6 +285,16 @@ div.contents.row div.content_post span.name a:hover {
 div.contents.row div.content_post span.name span {
   font-size: 9px;
   display: block;
+}
+
+.genre-select{
+  height: 40px;
+  width: 250px;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic"
 }
 
 form input,
