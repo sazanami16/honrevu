@@ -15,11 +15,14 @@
 
 ## reviews テーブル
 
-| Column  | Type        | Options          |
-| ------- | ---------- | ----------------  |
-| title   | string     | null: false       |
-| text    | string     | null: false       |
-| user    | references | foreign_key: true |
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------  |
+| title    | string     | null: false       |
+| genre_id | integer    | null: false       |
+| text     | text       | null: false       |
+| rating   | float      | null: false       |
+| user     | references | foreign_key: true |
+
 
 ### Association
 
@@ -30,7 +33,7 @@
 
 | Column   | Type       | Options           |
 | -------- | ---------- | ----------------- |
-| text     | string     | null: false       |
+| text     | text       | null: false       |
 | user     | references | foreign_key :true |
 | review   | references | foreign_key :true |
 
@@ -51,19 +54,23 @@
 - belongs_to :user
 - belongs_to :review
 
-## ○ 機能要件
-## ・ログイン、ログアウト
-## ・ユーザー登録
-## ・ユーザー編集
+##  機能要件
+## ・ログイン、ログアウト 済
+## ・ユーザー登録 済
+## ・ユーザー編集 済
 ## ・ユーザー削除
-## ・要約投稿（画像も含む）：制限文字800字以内
-## ・投稿編集（画像も含む）
-## ・投稿削除（画像も含む）：制限枚数 1枚
-## ・コメント機能
-## ・コメント編集
+## ・要約投稿（画像も含む）：制限文字400字以内
+## ・投稿編集（画像も含む） 済
+## ・投稿削除（画像も含む） 済
+## ・投稿検索機能
+## ・コメント機能 済
+## ・コメント編集 
 ## ・コメント削除
-## ・いいねボタン
+## ・いいねボタン 済
+## ・星レビュー機能 済
 
-## ※ フロントにReact使用(APIでつなげる）
 ## ※ ログイン、ログアウトはdevice使用
 ## ※ 画像はActiveStorageを使用
+## ※ 星レビュー機能はjQuery使用
+## ※ フロントはscssを使用
+

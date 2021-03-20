@@ -1,7 +1,11 @@
-<div class="contents row">
-  <% @reviews.each do |review| %>
-    <div id="review_<%= review.id %>">
-      <%= render 'review', review: review %>
+<% @reviews.each do |review| %>
+  <div class="contents row">
+    <div class="content_post">
+      <div id="review_<%= review.id %>">
+        <%= render 'review', review: review %>
+        <%= render 'content_footer', review: review %>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
+

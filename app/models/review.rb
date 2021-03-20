@@ -10,7 +10,7 @@ class Review < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :title
-    validates :text
+    validates :text, length: {maximum: 400}
     validates :genre_id, numericality: { other_than: 1 } 
     # validates :rating, numericality: {
     # less_than_or_equal_to: 5,
@@ -20,6 +20,13 @@ class Review < ApplicationRecord
 
   def was_attached?
     image.attached?
+  end
+
+  def content_length
+    content_for_validation = content.gsub(/\r\n/,"a")
+    if content_for_validation.length > 400
+      errors.add(:content, "は400文字以内で入力してください。")
+    end
   end
   
 end

@@ -24,6 +24,8 @@ ul li {
   max-width: 660px;
 }
 
+
+
 @media only screen and (max-width: 40em) {
   .row {
     width: 100%;
@@ -188,8 +190,8 @@ header.header .user_nav ul li a {
 }
 
 .item-img {
-  width: 33vh;
-  height: 40vh;
+  width: 37vh;
+  height: 50vh;
 }
 
 div.contents.row h2 {
@@ -298,7 +300,7 @@ div.contents.row div.content_post span.name span {
 }
 
 form input,
-form textarea {
+form {
   width: 100%;
   margin: 5px 0 15px;
   padding: 10px;
@@ -306,6 +308,20 @@ form textarea {
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
 }
+
+textarea {
+  width: 100%;
+  margin: 5px 0 0;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.text-counter {
+  margin: 0 10px 20px 5px ;
+}
+
 
 form input[type="submit"] {
   background-color: brown;

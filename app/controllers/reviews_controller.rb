@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit]
+  before_action :move_to_index, except: [:index, :show, :search]
+
 
   def index
     @reviews = Review.all
@@ -16,6 +18,11 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    review = Review.find(params[:id])
+    review.update(review_params)
   end
 
   def show
@@ -39,5 +46,11 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit(:image, :title, :genre_id, :text, :rating).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
