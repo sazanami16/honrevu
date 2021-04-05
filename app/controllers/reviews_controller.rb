@@ -21,8 +21,12 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    #binding.pry
     review = Review.find(params[:id])
     review.update(review_params)
+    if @review.save
+      redirect_to root_path
+    end
   end
 
   def show
@@ -39,13 +43,14 @@ class ReviewsController < ApplicationController
     redirect_to root_path
   end
 
-  def set_review
-    @review = Review.find(params[:id])
-  end
 
   private
   def review_params
     params.require(:review).permit(:image, :title, :genre_id, :text, :rating).merge(user_id: current_user.id)
+  end
+  
+  def set_review
+    @review = Review.find(params[:id])
   end
 
   def move_to_index

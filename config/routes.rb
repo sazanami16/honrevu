@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "reviews#index"
   resources :reviews do
-   resources :comments, only: [:create, :update, :edit, :destroy]
+   resources :comments, only: [:create, :destroy]
   end
   resources :users, only: :show
   post 'book/:id' => 'books#create', as: 'create_book'

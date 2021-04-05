@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
+
   def create
     @comment = Comment.create(comment_params)
     redirect_to "/reviews/#{@comment.review.id}"
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-  end
-
   def destroy
-    comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+    comment = @review.comments.find(params[:id])
     comment.destroy
+    redirect_back(fallback_location: review_path)
+    
   end
 
   private

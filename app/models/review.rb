@@ -24,7 +24,7 @@ class Review < ApplicationRecord
 
   def content_length
     content_for_validation = content.gsub(/\r\n/,"a")
-    if content_for_validation.length > 400
+    if content_for_validation.length >= 400
       errors.add(:content, "は400文字以内で入力してください。")
     end
   end

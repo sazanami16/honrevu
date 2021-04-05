@@ -28,7 +28,12 @@
             <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %></strong>
             </div>
             <div class="comment_text">
-            <%= comment.text %>
+              <%= comment.text %>
+            </div>
+            <div class="action">
+              <% if current_user.id == comment.user_id %>
+                <%= link_to '削 除', review_comment_path(@review, comment), method: :delete, class:"submit-btn" %>
+              <% end %>
             </div>
           </div>
         <% end %>
