@@ -54,6 +54,8 @@
 
 ## データベース設計
 
+[![Image from Gyazo](https://i.gyazo.com/e9374b2ecdbb529a42abeb63283757a0.png)](https://gyazo.com/e9374b2ecdbb529a42abeb63283757a0)
+
 ## users テーブル
 
 | Column   | Type   | Options     |
