@@ -1,4 +1,6 @@
 <%= form_with(model: @review, local: true) do |f| %>
+    <%= render 'reviews/error_messages', model: @review %>
+
   <%= f.file_field :image, placeholder: "Image Url" %>
   <%= f.text_field :title, placeholder: "Title" %>
   <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
