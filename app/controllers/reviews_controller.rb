@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_review, only: [:show, :update, :edit]
+  before_action :move_to_index, except: [:index, :show]
 
 
   def index
@@ -21,11 +21,10 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    #binding.pry
-    review = Review.find(params[:id])
-    review.update(review_params)
-    if @review.save
-      redirect_to root_path
+    if @review.update(review_params)
+       redirect_to review_path
+    else
+       render :edit
     end
   end
 
@@ -35,6 +34,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    unless @review.user.id == current_user.id
+      redirect_to action: :index
+    end
   end
 
   def destroy

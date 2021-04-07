@@ -111,12 +111,11 @@
 - belongs_to :review
 
 
-## 開発環境と使用技術
+## 開発環境
 - HTML
 - CSS
+- JavaScript
 - Ruby（2.6.5)
 - Ruby on Rails(6.0.0)
-- JavaScript
-- MySQl(mysql2 0.4.4)
-- Git
-
+- RSpec
+- Visual Studio Code

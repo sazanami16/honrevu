@@ -21,7 +21,7 @@ ul li {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 660px;
+  max-width: 900px;
 }
 
 
@@ -114,7 +114,7 @@ header.header div.header__bar.row div.grid-6 {
 }
 
 header.header div.header__bar.row div.grid-6 a.post {
-  width: 120px;
+  width: auto;
   display: inline-left;
   margin-left: 10px;
 }
@@ -219,13 +219,15 @@ div.contents.row div.content_post {
   padding: 10px;
 }
 .content_footer{
+  height: 45px;
   display: flex;
+  justify-content: space-between;
 }
 
-.book_mark{
-  height: 33px;
+.book_mark {
+  height: 45px;
   width: 145px;
-  padding: 5px;
+  padding: 10px 10px 10px 20px;
   margin-right: 350px;
 }
 
@@ -248,9 +250,10 @@ div.contents.row div.content_post {
 }
 
 .more {
-  height: 33px;
-  width: 145px;
-  padding: 5px;
+  height: 45px;
+  width: 180px;
+  padding: 10px;
+  text-align: center;
 }
 .more_list {
   display: flex;
@@ -259,20 +262,27 @@ div.contents.row div.content_post {
   font-size: 15px;
   padding-right: 15px;
 }
+.review-star {
+  height: 50px;
+  display: flex;
+}
 
 .content_title,
 .content_genre {
-  margin: 10px 0 20px 10px;
+  margin: 10px 10px;
   padding: 10px;
   height: 50px;
-  width: 627px;
   font-size: 20px;
   border: black;
   border: 1.5px solid #58575a38;
 }
+div.content_header span,
+div.content_middle span {
+  margin: 30px 10px 10px 10px;
+}
 
 div.content_text {
-  margin: 10px 0 20px 10px;
+  margin: 10px 10px 20px 10px;
   padding: 10px;
   height: 100%;
   font-size: 15px;

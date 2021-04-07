@@ -6,5 +6,8 @@ FactoryBot.define do
     rating   { 4.5 }
     association :user
 
+    after(:build) do |message|
+      message.image.attach(io: File.open('public/test.png'), filename: 'test.png')
+    end
   end
 end

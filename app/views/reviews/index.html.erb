@@ -1,11 +1,11 @@
 <% @reviews.each do |review| %>
   <div class="contents row">
-    <div class="content_post">
-      <div id="review_<%= review.id %>">
+     <div class="content_post">
         <%= render 'review', review: review %>
-        <%= render 'content_footer', review: review %>
+           <div id="review_<%= review.id %>">
+               <%= render 'book', review: review %>
+           </div>
       </div>
-    </div>
   </div>
 <% end %>
 

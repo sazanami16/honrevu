@@ -10,7 +10,7 @@ class Review < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :title
-    validates :text, length: {maximum: 400}
+    validates :text, length: {maximum: 200}
     validates :genre_id, numericality: { other_than: 1 } 
     validates :rating, numericality: {
     less_than_or_equal_to: 5,

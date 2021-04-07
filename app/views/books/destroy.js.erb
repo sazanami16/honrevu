@@ -1,1 +1,1 @@
-document.getElementById('review_<%= @review.id %>').innerHTML = '<%= j(render @review) %>'
+document.getElementById('review_<%= @review.id %>').innerHTML = '<%= j(render partial: 'reviews/book', locals: {review: @review}) %>'
