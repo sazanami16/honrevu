@@ -43,7 +43,11 @@
 
 ## 実装機能についての画像とその説明
 
+[![Image from Gyazo](https://i.gyazo.com/716f922140e26aa151a0ddecc5f0992c.png)](https://gyazo.com/716f922140e26aa151a0ddecc5f0992c)
 
+
+
+[![Image from Gyazo](https://i.gyazo.com/bdb1d1b86782d384dd255e075abe1745.png)](https://gyazo.com/bdb1d1b86782d384dd255e075abe1745)
 
 
 ## 今後実装予定の機能

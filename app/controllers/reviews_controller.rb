@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
+    @reviews = Review.includes(:user).order("created_at DESC")
+    query = "SELECT * FROM reviews"
   end
 
   def new
