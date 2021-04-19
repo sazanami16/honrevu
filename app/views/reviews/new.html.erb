@@ -11,15 +11,15 @@
               </div>
               <div class="form-group">
                 <div class="form-text">タイトル</div>
-                  <%# <div class="form-text-wrap"> %>
+                  <div class="form-text-wrap">
                     <%= f.text_field :title, class: "form-box" %>
-                  <%# </div> %>
+                  </div>
               </div>
               <div class="form-group">
                 <div class="form-text">ジャンル</div>
-                   <%# <div class="form-text-wrap"> %>
+                   <div class="form-text-wrap">
                      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "form-box"}) %>
-                   <%# </div> %>
+                   </div>
                </div>
                <div class="form-group">
                  <div class="form-text">投稿文</div>
