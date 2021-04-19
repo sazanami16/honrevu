@@ -1,17 +1,9 @@
-@charset "UTF-8";
-
-* {
-  box-sizing: border-box;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-  padding: 0;
+body {
+  background-color: #f5f5f3; 
+  line-height: 1.57;
+  letter-spacing: 0.20em;
+  font-size: 15px;
+  color: #666;
   margin: 0;
 }
 
@@ -24,69 +16,34 @@ ul li {
   max-width: 900px;
 }
 
-
-
-@media only screen and (max-width: 40em) {
-  .row {
-    width: 100%;
-    padding: 0 20px !important;
-  }
-}
-
-body,
-html {
-  height: 100%;
-  background-color: #f5f5f3;
-}
-
-body {
-  padding-top: 60px;
-}
-
-h1,
-h3,
-h4,
-body {
-  line-height: 1.57;
-  letter-spacing: 0.20em;
-  font-size: 15px;
-  color: #666;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: #666;
 }
 
-a:hover {
-  color: brown;
+.header_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btn,
-header.header div.header__bar.row div.grid-6 a.post {
+.post {
   padding: 8px 20px;
+  margin-left: 20px;
   font-size: 14px;
   color:white;
   background-color: brown;
   font-weight: bold;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 20px;
   display: inline-block;
 }
 
-.btn:hover,
-header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: brown;
-  color: burlywood;
-}
-
-
-header.header {
+.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
   background-color: #fff;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -94,100 +51,12 @@ header.header {
   height: 62px;
 }
 
-header.header div.header__bar.row {
-  position: relative;
-}
-
-header.header div.header__bar.row h1.grid-6 {
+.header-title {
   font-size: 20px;
   line-height: 41px;
   float: left;
 }
 
-header.header div.header__bar.row h1.grid-6 a {
-  display: block;
-}
-
-header.header div.header__bar.row div.grid-6 {
-  float: right;
-  text-align: right;
-}
-
-header.header div.header__bar.row div.grid-6 a.post {
-  width: auto;
-  display: inline-left;
-  margin-left: 10px;
-}
-
-header.header .user_nav {
-  position: relative;
-  height: 100px;
-  right: 0;
-}
-
-header.header .user_nav span {
-  top: 5px;
-  display: block;
-  float: left;
-  margin-left: 30px;
-  width: 150px;
-  height: 50px;
-  font-size: 1em;
-  cursor: pointer;
-  position: relative;
-}
-
-header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: -4px;
-}
-
-header.header .user_nav span:hover ul {
-  color: brown;
-  display: block;
-}
-
-header.header .user_nav ul {
-  display: none;
-  position: absolute;
-  top: 46px;
-  right: 0;
-  border-left: 1px solid #d8d8d8;
-  border-right: 1px solid #d8d8d8;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header.header .user_nav ul li {
-  background-color: #f0f0f0;
-}
-
-header.header .user_nav ul li a {
-  display: block;
-  padding: 10px 20px;
-  text-align: left;
-  border-bottom: 1px solid #d8d8d8;
-}
-
-.form {
-  background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
-  background-size: cover;
-}
-
-.form .contents {
-  position: absolute;
-  left: 0;
-  top: 30%;
-  bottom: 0;
-  right: 0;
-}
-
-.form footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-}
 
 .item-img {
   width: 37vh;
@@ -276,10 +145,6 @@ div.contents.row div.content_post {
   border: black;
   border: 1.5px solid #58575a38;
 }
-div.content_header span,
-div.content_middle span {
-  margin: 30px 10px 10px 10px;
-}
 
 div.content_text {
   margin: 10px 10px 20px 10px;
@@ -287,16 +152,6 @@ div.content_text {
   height: 100%;
   font-size: 15px;
   border: 1.5px solid #58575a38;
-}
-
-div.contents.row div.content_post span.name a:hover {
-  text-decoration: underline;
-  color: #aaa;
-}
-
-div.contents.row div.content_post span.name span {
-  font-size: 9px;
-  display: block;
 }
 
 .genre-select{
@@ -309,52 +164,94 @@ div.contents.row div.content_post span.name span {
   font-family: "游ゴシック", "YuGothic"
 }
 
-form input,
-form {
-  width: 100%;
-  margin: 5px 0 15px;
-  padding: 10px;
+.form-wrap {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 80px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
 }
 
-textarea {
+.title-frame {
+  height: 50px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.form-group {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.form-text {
   width: 100%;
-  margin: 5px 0 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.form-text-wrap {
+  text-align: center;
+}
+
+.form-image {
+  background-color: white;
+  border: 1px solid rgb(118, 118, 118);
+}
+
+.form-image-box {
   padding: 10px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
 }
 
-.text-counter {
-  margin: 0 10px 20px 5px ;
+.form-box {
+  width: 100%;
+  height: 45px;
 }
 
+#input-text {
+  height: auto;
+}
 
-form input[type="submit"] {
+.form-star-wrap {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input {
+  text-align: center;
+}
+.submit {
+  text-align: center;
+}
+
+.submit-btn {
+  width: 160px;
+  padding: 15px 40px;
+  font-weight: bold;
+  font-size: 16px;
   background-color: brown;
+  color: white;
+  border: solid 2px brown;
   border-radius: 20px;
-  color: #fff;
-  border: 0;
-  font-size: 18px;
-}
-
-form input[type="submit"]:hover {
-  background-color: brown;
-  color: burlywood;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .container {
   margin: 20px 0;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
 }
 
-.container h3 {
+.container {
   margin: 0 0 20px;
   text-align: center;
   font-weight: normal;
@@ -392,7 +289,7 @@ form input[type="submit"]:hover {
   color: brown;
 }
 
- .action{
+.action{
    width: 50px;
   margin-left: auto;
 }
