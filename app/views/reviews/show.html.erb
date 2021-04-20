@@ -10,17 +10,19 @@
           </div>
        </div>
     </div>
-    <div class="container">
+    <div class="comment_container">
         <% if current_user %>
           <%= form_with(model: [@review, @comment], local:true) do |form| %>
-              <%= form.text_area :text, placeholder: "コメントする" %>
-              <%= form.submit "SEND" %>
+          <div class="comment_submit">
+              <%= form.text_area :text, placeholder: "コメントする", class: "comment_content" %>
+              <%= form.submit "SEND", class:"send_btn" %>
+          </div>
           <% end %>
         <% else %>
           <strong><p>※ コメントの投稿には新規登録/ログインが必要です</p></strong>
         <% end %>
         <div class="comments">
-          <h4>コメント一覧</h4>
+          <h4 class="comment_title">コメント一覧</h4>
             <% if @comments %>
               <% @comments.each do |comment| %>
                 <div class="comment_subject">
@@ -32,7 +34,7 @@
                     </div>
                     <div class="action">
                       <% if current_user.id == comment.user_id %>
-                        <%= link_to '削 除', review_comment_path(@review, comment), method: :delete, class:"submit-btn" %>
+                        <%= link_to '削 除', review_comment_path(@review, comment), method: :delete, class:"delete-btn" %>
                       <% end %>
                     </div>
                 </div>
