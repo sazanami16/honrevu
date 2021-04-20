@@ -316,7 +316,8 @@ footer p {
   .content_genre {
     font-size: 15px;
   }
-  .content_text {
+  .content_text,
+  .content_footer {
     font-size: 12px;
   }
 }
