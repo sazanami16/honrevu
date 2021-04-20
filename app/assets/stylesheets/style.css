@@ -230,14 +230,6 @@ a {
 }
 
 .container {
-  margin: 20px 0;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
-}
-
-.container {
   margin: 0 0 20px;
   text-align: center;
   font-weight: normal;
@@ -263,7 +255,6 @@ a {
   border: 1px solid #aaa;
   border-radius: 0.5em;
   padding: 10px;
-  
 }
 
 .comments a {
@@ -317,7 +308,8 @@ footer p {
     font-size: 15px;
   }
   .content_text,
-  .content_footer {
+  .content_footer,
+  .more_list a   {
     font-size: 12px;
   }
 }
