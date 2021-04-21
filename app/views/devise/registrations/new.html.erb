@@ -1,34 +1,37 @@
 <div class="contents row">
-  <div class="container">
-    <h2>新規ユーザー</h2>
+    <div class="form-wrap">
+        <h2 class="page-heading">新規ユーザー</h2>
+        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="field">
-        <%= f.label :"ユーザー名"%><br />
-        <%= f.text_field :name %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"メールアドレス" %><br />
-        <%= f.email_field :email %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"パスワード（６文字以上）" %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :"パスワード確認" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "新規登録", class: :form_btn %>
-      </div>
-    <% end %>
-   </div>
-  </div>
+          <div class="form-group">
+            <div class="form-login">ユーザー名</div>
+              <div class="form-text-wrap">  
+                  <%= f.text_field :name, class:"form-post" %>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-login">メールアドレス</div>
+              <div class="form-text-wrap">  
+                <%= f.email_field :email, class:"form-post" %>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-login">パスワード</div>
+              <div class="form-text-wrap">  
+                <%= f.password_field :password, autocomplete: "current-password", class:"form-post" %>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-login">パスワード(確認）</div>
+              <div class="form-text-wrap">  
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-post" %>
+              </div>
+          </div>
+          <div class="submit">
+            <%= f.submit "新規登録", class:"submit-btn" %>
+          </div>
+        <% end %>
+    </div>
+</div>
 
     
