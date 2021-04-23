@@ -1,39 +1,40 @@
 <div class="contents row">
   <p><%= @name %>さんの投稿一覧</p>
-  <% @reviews.each do |review| %>
-      <div class="content_post">
-        <div class="content_image">
-          <%= link_to image_tag(review.image, class: "item-img"), review_path(review.id), method: :get %>
-        </div>
-        <div class="content_header">
-          <span>評価：</span>
-          <div id="star-rate<%= review.id%>"></div>    
-              <script>
-                $('#star-rate<%= review.id%>').raty({
-                  size      : 36,
-                  starOff   : '<%= asset_path('star-off.png') %>',
-                  starOn    : '<%= asset_path('star-on.png') %>',
-                  starHalf  : '<%= asset_path('star-half.png') %>',
-                  half      : true,
-                  readOnly: true,
-                  score: <%= review.rating %>,
-                });
-                $('#star-rate<%= review.id%>').css('padding', '10px');
-              </script>
-              <span>ジャンル：</span>
-              <div class="content_genre">
-                <%= review.genre.name %>
-              </div>
-              <span>タイトル：</span>
-              <div class="content_title">
-                <%= review.title %>
-              </div>
+    <% @reviews.each do |review| %>
+        <div class="content_post">
+            <div class="content_image">
+              <%= link_to image_tag(review.image, class: "item-img"), review_path(review.id), method: :get %>
             </div>
-          <span>レビュー：</span>
-          <div class="content_text">
-            <%= review.text %>
-          </div>
-      </div>
-  <% end %>
+            <div class="content_header">
+              <span>評価：</span>
+            <div id="star-rate<%= review.id%>"></div>    
+                <script>
+                  $('#star-rate<%= review.id%>').raty({
+                    size      : 36,
+                    starOff   : '<%= asset_path('star-off.png') %>',
+                    starOn    : '<%= asset_path('star-on.png') %>',
+                    starHalf  : '<%= asset_path('star-half.png') %>',
+                    half      : true,
+                    readOnly: true,
+                    score: <%= review.rating %>,
+                  });
+                  $('#star-rate<%= review.id%>').css('padding', '10px');
+                </script>
+                <span>ジャンル：</span>
+                <div class="content_genre">
+                  <%= review.genre.name %>
+                </div>
+                <span>タイトル：</span>
+                <div class="content_title">
+                  <%= review.title %>
+                </div>
+              </div>
+              <span>レビュー：</span>
+                <div class="content_text">
+                  <%= review.text %>
+                </div>
+            </div>
+        </div>
+    <% end %>
 </div>
 
