@@ -7,8 +7,8 @@
 - 感銘を受けた文章、好きな文章を共有してください。
 - 読んだ後、すぐに内容を忘れてしまう人におすすめです。
 
-## 本番環境URL（Heroku）
-- https://honrevu.herokuapp.com/
+## 本番環境URL（AWS 「ELB+ACM発行証明書→EC2」にてHTTPS通信化）
+- https://portfolio.honrevu.com/
 
 ## テスト用アカウント
 - E-Mail：test1@com
