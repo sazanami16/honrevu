@@ -59,7 +59,8 @@
 ### ・レビュー記事は、短く要約してもらうために200文字の字数制限を設けています。
 ### ・文字数カウント機能は今後実装予定です。
 
-[![Image from Gyazo](https://i.gyazo.com/bdb1d1b86782d384dd255e075abe1745.png)](https://gyazo.com/bdb1d1b86782d384dd255e075abe1745)
+![投稿ページ](https://user-images.githubusercontent.com/73375655/117755051-7c766e80-b256-11eb-9114-f461ac3ebb76.png)
+
 
 ## ④ 投稿完了後、メインページに遷移
 ### ・投稿した記事は、メインページに表示されます。
@@ -79,8 +80,6 @@
 ### ・詳細ページの下にて投稿した記事に対してコメントすることができます。
 ### ・投稿したコメントは削除することができます。
 
-[![Image from Gyazo](https://i.gyazo.com/7753d121afa9ad2cb674b1a608b3ae5d.png)](https://gyazo.com/7753d121afa9ad2cb674b1a608b3ae5d)
-
 [![Image from Gyazo](https://i.gyazo.com/f8f2e6ad384a66f153a2a5aa0d917813.gif)](https://gyazo.com/f8f2e6ad384a66f153a2a5aa0d917813)
 
 ## ⑦ 投稿編集ページ
@@ -96,7 +95,8 @@
 
 ## データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/e9374b2ecdbb529a42abeb63283757a0.png)](https://gyazo.com/e9374b2ecdbb529a42abeb63283757a0)
+<img width="518" alt="ER図" src="https://user-images.githubusercontent.com/73375655/117755200-c19aa080-b256-11eb-97a7-55e8f98dc525.png">
+
 
 ## users テーブル
 
